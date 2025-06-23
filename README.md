@@ -14,7 +14,7 @@ Automates the full satellite network setup:
 * Creates Docker containers for satellites (`create-sat.sh`)
 * Builds VXLAN links between satellites (`add-link.sh`)
 * Assigns IPs and shapes bandwidth (`add-sat-address.sh`)
-* Updates topology in etcd with enriched metadata
+* Updates the topology in etcd with enriched metadata
 
 ### `create-sat.sh` 
 
@@ -40,7 +40,7 @@ Applies FRRouting IS-IS configuration to satellites. Adds loopbacks, redistribut
 
 Performs graph partitioning to assign satellites to hosts. Updates `/config/satellites/` in etcd.
 
-### `network_test_scenarios-9-ecmp40hashflows.py` 
+### `network_test_scenarios.py` 
 
 Runs iperf3 tests on active links:
 
@@ -49,9 +49,9 @@ Runs iperf3 tests on active links:
 * Saves results to CSV
 * Generates a throughput-vs-worker plot
 
-### `Leo200.json` 
+### `etcd-data.json` 
 
-Sample route data used for predefined hop-based traffic simulation.
+Data used for a predefined hop-based traffic simulation.
 
 ### `image.dockerfile` 
 
