@@ -34,7 +34,7 @@ Sets up Linux bridge interfaces `br1` to `br5` on each host. Needed for linking 
 
 ### `configure_frr_isis.sh` 
 
-Applies FRRouting IS-IS configuration to satellites. Adds loopbacks, redistributes static routes, configures adjacency.
+Applies FRRouting IS-IS configuration to satellites. Adds loopbacks, redistributes static routes, and configures adjacency.
 
 ### `Clustering-metis.py` 
 
@@ -68,8 +68,8 @@ Dockerfile to build the `shahramdd/sat:3.4` image for satellite containers (incl
 | 3️⃣  | Build VXLAN tunnels                         | `add-link.sh`                |
 | 4️⃣  | Assign IP addresses                         | `add-sat-address.sh`         |
 | 5️⃣  | Enrich etcd topology with interface/IP info | Inlined                      |
-| 6️⃣  | (Optional) Configure IS-IS routing          | `configure_frr_isis.sh`      |
-| 7️⃣  | (Optional) Run throughput test              | `network_test_scenarios*.py` |
+| 6️⃣  | Configure IS-IS routing                     | `configure_frr_isis.sh`      |
+| 7️⃣  | Run throughput test                         | `network_test_scenarios*.py` |
 
 ---
 
@@ -102,7 +102,7 @@ python3 sat-agent.py
 ### 5. Assign IP Addresses and Apply Traffic Control
 
 * Each antenna interface receives a `/32` IP.
-* Traffic shaping is applied to all interfaces including `eth0`.
+* Traffic Control is applied to all interfaces, including `eth0`.
 
 ### 6. Configure IS-IS and FRR (Optional)
 
@@ -119,7 +119,7 @@ python3 network_test_scenarios-9-ecmp40hashflows.py
 ### 8. OUTPUT
 
 * **CSV**: Worker-wise throughput details
-* **Plot**: Throughput trend as number of workers increases
+* **Plot**: Throughput trend as the number of workers increases
 * **Log Files**: JSON logs of each iperf3 session
 
 ---
@@ -127,6 +127,6 @@ python3 network_test_scenarios-9-ecmp40hashflows.py
 ## 🔹 OUTPUT
 
 * **CSV**: Worker-wise throughput details
-* **Plot**: Throughput trend as number of workers increases
+* **Plot**: Throughput trend as the number of workers increases
 * **Log files**: JSON logs of each iperf3 session
 
