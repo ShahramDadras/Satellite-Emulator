@@ -122,11 +122,4 @@ python3 network_test_scenarios-9-ecmp40hashflows.py
 * **Plot**: Throughput trend as the number of workers increases
 * **Log Files**: JSON logs of each iperf3 session
 
----
-
-## 🔹 OUTPUT
-
-* **CSV**: Worker-wise throughput details
-* **Plot**: Throughput trend as the number of workers increases
-* **Log files**: JSON logs of each iperf3 session
 
